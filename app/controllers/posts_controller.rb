@@ -10,15 +10,20 @@ class PostsController < ApplicationController
   def update
     # @post.update(post_params)
     @post = Post.new(post_params)
-    if @post.valid?
-      @post.save
-      @post = Post.find(params[:id])
-      
+    if @post.update(post_params)
       redirect_to post_path(@post)
-      # render :show
     else
       render :edit
     end
+    # if @post.valid?
+    #   @post.save
+    #   @post = Post.find(params[:id])
+      
+    #   redirect_to post_path(@post)
+      # render :show
+    # else
+    #  render :edit
+    #end
     # redirect_to post_path(@post)
   end
 
