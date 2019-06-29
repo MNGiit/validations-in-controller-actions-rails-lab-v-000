@@ -11,8 +11,7 @@ class PostsController < ApplicationController
     # @post.update(post_params)
     @post = Post.new(post_params)
     if @post.valid?
-      # @post.save
-      @post.update
+      @post.save
       @post = Post.find(params[:id])
       
       redirect_to post_path(@post)
