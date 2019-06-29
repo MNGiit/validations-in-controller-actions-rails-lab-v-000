@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def update
     # @post.update(post_params)
-    @post = Post.new(post_params)
+    # @post = Post.new(post_params)
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
