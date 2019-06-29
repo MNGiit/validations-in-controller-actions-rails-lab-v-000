@@ -13,8 +13,8 @@ class PostsController < ApplicationController
     if @post.valid?
       @post.save
       
-      # redirect_to post_path(@post)
-      render :show
+      redirect_to post_path(@post)
+      # render :show
     else
       render :edit
     end
