@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     if @post.valid?
       @post.save
       @post = Post.find(params[:id])
+      
       redirect_to post_path(@post)
       # render :show
     else
